@@ -1,0 +1,100 @@
+/*NavBar*/
+body {
+    margin: 0;
+}
+.navbar {    
+    height: 50px;
+    border-bottom: 1px dotted black;
+}
+.navbar.bg-light {
+    background-color: white !important;
+}
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    margin: auto;
+}
+/*Row & Column Positioning*/
+.row {
+    width: 100%;
+    padding: 0 20% 0;
+}
+.col-lg-6, .col-lg-3 {
+    padding: 0!important;
+}
+.col-lg-6:first-child, .col-lg-6:last-child, .col-lg-3 {
+    border-right: 1px dotted black;
+    border-radius: 1px;
+}
+.col-lg-6, .col-lg-3 {
+    border-bottom:  1px dotted black;
+    border-radius: 1px;
+}
+.col-lg-6:first-child {
+    border-left: 1px dotted black;
+    border-radius: 1px;    
+}
+.col-lg-6, .col-lg-3, text, .navbar-brand, .ct-chart-donut .ct-label, .badge {
+    font-family: 'Comfortaa', cursive !important;   
+    font-size: 16px;
+}
+/*Compressor Indicator*/
+.material-icons {
+    color: green;
+}
+.material-icons.red{
+    color: red;
+}
+.col-lg-6 .card {
+    height: 100%;
+}
+.col-lg-6 .card-body {
+    text-align: center;
+}
+/*Line Charts*/
+iframe {
+    width: 100% !important;
+    height: 260px;
+    border: none;
+    border-right: 0.1px dotted black;
+}
+/*Pressure Gauge*/
+#pGauge table {
+    width: auto;
+    margin: 0 auto !important;
+}
+/*Temperature Gauge*/
+.ct-series-a .ct-slice-donut {
+    stroke: #17B0E7 !important;
+    stroke-width: 30px !important;
+}
+.ct-series-b .ct-bar, .ct-series-b .ct-line, .ct-series-b .ct-point, .ct-series-b .ct-slice-donut {
+    stroke: #FF7F7F !important;
+    stroke-width: 30px !important;
+}
+.ct-chart-donut .ct-label {
+    fill: white;
+    font-size: 14px;
+}
+.card {
+    border: none !important;
+    outline: none;
+}
+@media only screen and (max-width:1200px) {
+    .col-lg-6:nth-child(n+2), .col-lg-3:nth-child(n+2) {
+        border-left: 1px dotted black !important;
+    }
+}
+table {
+    margin-top: 20%;
+}
+table td:last-child {
+    text-align: right;
+    color: blue;
+}
+table tr:last-child {
+    border-bottom: 1px solid #DEE2E6;
+}

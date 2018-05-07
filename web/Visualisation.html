@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Visualisation</title>
+        <!--External CSS -->
+        <link rel="stylesheet" type="text/css" href="Visualisation.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Fonts, Material Icons-->
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa|Josefin+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Bootstrap Imports-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <!--Gauge Charts -->
+        <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <!--External Scripts-->
+        <script type="text/javascript" src="PGauge.js"></script>
+        <script type="text/javascript" src="TGauge.js"></script>
+        <!--Chartist JS Imports-->
+        <script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+        <link href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" rel="stylesheet" type="text/css" />
+        <link href='http://fonts.googleapis.com/css?family=Oxygen:300' rel='stylesheet' type='text/css'>
+    </head>  
+    <body id="body">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light">
+            <a class="navbar-brand navbar-brand-centered" href="Visualisation.html">Air Compressor Control</a>
+        </nav>
+        <!--Compressor Parameters-->
+        <div class="row">
+            <!--Compressor State-->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body" id="state">
+                        Compressor 
+                    </div>
+                </div>
+            </div>
+            <!--Storage Capacity-->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body" id="capacity">
+                        Storage Tank Capacity
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Pressure Channel-->
+        <div class="row">
+            <!--Pressure Chart-->
+            <div class="col-lg-6">
+                <iframe src="https://thingspeak.com/channels/434997/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Pressure&type=spline&xaxis=Time&yaxis=Bar"></iframe>
+            </div>
+            <!--Pressure Gauge-->
+            <div class="col-lg-3">
+                <div id="pGauge">
+                </div>
+            </div>
+            <!--Pressure Computations-->
+            <div class="col-lg-3">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>Set Point</td>
+                            <td id="pLimit"></td>
+                        </tr>
+                        <tr>
+                            <td>Avg. Pressure</td>
+                            <td id="pAvg"></td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td id="pAlarm"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--Temperature Channel-->
+        <div class="row">
+            <!--Temperature Chart-->
+            <div class="col-lg-6">
+                <iframe src="https://thingspeak.com/channels/434997/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=spline&xaxis=Time&yaxis=Celsius"></iframe>
+            </div>
+            <!--Temperature Gauge-->
+            <div class="col-lg-3">
+                <div class="ct-chart ct-golden-section h-100 my-auto">
+                    <!--Insert Chart-->
+                </div>
+            </div>
+            <!--Temperature Computations-->
+            <div class="col-lg-3">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>Set Point</td>
+                            <td id="tLimit"></td>
+                        </tr>
+                        <tr>
+                            <td>Avg. Temperature</td>
+                            <td id="tAvg"></td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td id="tAlarm"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
